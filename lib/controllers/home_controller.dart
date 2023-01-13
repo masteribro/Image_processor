@@ -31,9 +31,9 @@ class HomeController extends ControllerMVC {
       }
       final imageTemp = File(imagePicked.path);
       setState(() => model.image = imageTemp);
-      print(model.image?.path.toString());
+
     } on PlatformException catch(e) {
-      print('Failed to pick image: $e');
+
     }
     return model.image?.path;
   }

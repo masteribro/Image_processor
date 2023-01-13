@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-import 'colors.dart';
+import 'values/colors.dart';
 
 class ImageButton extends StatelessWidget {
   final String text;

@@ -1,14 +1,12 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_editor/views/widgets/button.dart';
 import 'package:image_editor/views/widgets/loading_indicator.dart';
 import 'package:mvc_pattern/mvc_pattern.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
-
 import '../../controllers/home_controller.dart';
-import '../widgets/color_filter.dart';
-import '../widgets/colors.dart';
+import '../widgets/values/color_filter.dart';
+import '../widgets/values/colors.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({
@@ -100,15 +98,12 @@ class _HomePageState extends StateMVC<HomePage> {
                         key: const Key('select_Image'),
                         text: 'Select Image',
                         onPressed: () async {
-                          String? imageResult = await con.pickImage();
-                          print(
-                              "Image Result in HomePage Fn Call(): $imageResult");
+                          await con.pickImage();
                           if (con.model.image != null) {
                             setState(() {
                               con.model.loading = false;
                             });
                           }
-                          // setState(() { con.loading = true;}
                           // );
                         }),
                     SizedBox(
